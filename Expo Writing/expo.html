@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expository Writing — Final Exam Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9922B;
+    --gold-light: #F5E6C8;
+    --gold-dark: #8A6118;
+    --navy: #1A2640;
+    --navy-mid: #2D3F5E;
+    --navy-light: #E8EDF5;
+    --teal: #1A7A6E;
+    --teal-light: #D6F0EC;
+    --rose: #9B3A4A;
+    --rose-light: #F5E0E3;
+    --slate: #4A5568;
+    --muted: #718096;
+    --bg: #FAFAF8;
+    --white: #FFFFFF;
+    --border: #E2E0D8;
+    --text: #1A1A1A;
+  }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    color: #fff;
+    padding: 48px 32px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 260px; height: 260px;
+    border: 40px solid rgba(201,146,43,0.18);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 40px;
+    width: 160px; height: 160px;
+    border: 28px solid rgba(201,146,43,0.10);
+    border-radius: 50%;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    max-width: 480px;
+  }
+
+  /* ── NAV PILLS ── */
+  .nav-wrap {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .nav-wrap::-webkit-scrollbar { height: 3px; }
+  .nav-wrap::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+  .nav-pill {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--slate);
+    background: var(--navy-light);
+    margin-right: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-pill:hover { background: var(--navy); color: #fff; }
+
+  /* ── CONTENT WRAPPER ── */
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 20px 60px; }
+
+  /* ── SECTION HEADER ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 36px 0 16px;
+    border-bottom: 2px solid var(--gold);
+    margin-bottom: 24px;
+  }
+  .section-num {
+    background: var(--navy);
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  /* ── DEFINITION BOX ── */
+  .def-box {
+    background: var(--navy-light);
+    border-left: 4px solid var(--navy);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+  }
+  .def-box .def-term {
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .def-box p { font-size: 14px; color: var(--slate); }
+
+  /* ── TYPE CARD ── */
+  .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+  @media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+  .type-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .type-card .card-icon { font-size: 22px; margin-bottom: 8px; }
+  .type-card .card-title { font-weight: 600; color: var(--navy); font-size: 15px; margin-bottom: 6px; }
+  .type-card .card-desc { font-size: 13px; color: var(--slate); line-height: 1.55; }
+  .type-card .example-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+  }
+  .type-card .example { font-size: 13px; color: var(--teal); font-style: italic; }
+
+  /* ── EXAMPLE BOX ── */
+  .example-box {
+    background: var(--teal-light);
+    border: 1px solid #9BDAD2;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+  }
+  .example-box .ex-head {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+  .example-box p { font-size: 14px; color: #1A4A44; }
+
+  /* ── PRACTICE BOX ── */
+  .practice-box {
+    background: var(--rose-light);
+    border: 1px solid #E8B4BB;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+  }
+  .practice-box .pr-head {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--rose);
+    margin-bottom: 8px;
+  }
+  .practice-box ul { padding-left: 18px; }
+  .practice-box li { font-size: 13px; color: #5A2030; margin-bottom: 5px; }
+
+  /* ── GOLD HIGHLIGHT ── */
+  .gold-box {
+    background: var(--gold-light);
+    border: 1px solid #E0C27A;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+  }
+  .gold-box .g-head {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gold-dark);
+    margin-bottom: 8px;
+  }
+  .gold-box p, .gold-box li { font-size: 14px; color: #5A4010; }
+  .gold-box ul { padding-left: 18px; }
+  .gold-box li { margin-bottom: 4px; }
+
+  /* ── FLOWCHART SVG ── */
+  .chart-wrap {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 10px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+  }
+  .chart-title {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 14px;
+  }
+
+  /* ── APPEAL TRIANGLE ── */
+  .appeals-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+  @media (max-width: 500px) { .appeals-row { grid-template-columns: 1fr; } }
+  .appeal-card {
+    border-radius: 12px;
+    padding: 16px 14px;
+    text-align: center;
+  }
+  .appeal-card .appeal-letter { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; margin-bottom: 6px; }
+  .appeal-card .appeal-name { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .appeal-card .appeal-desc { font-size: 12px; line-height: 1.5; }
+
+  /* ── LIST ── */
+  .styled-list { padding-left: 0; list-style: none; margin-bottom: 16px; }
+  .styled-list li {
+    padding: 8px 0 8px 24px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    position: relative;
+  }
+  .styled-list li:last-child { border-bottom: none; }
+  .styled-list li::before {
+    content: '›';
+    position: absolute;
+    left: 6px;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  /* ── RESEARCH STEPS ── */
+  .research-steps { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+  .r-step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+  }
+  .r-step-num {
+    background: var(--navy);
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 13px;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .r-step-content .r-title { font-weight: 600; color: var(--navy); font-size: 14px; }
+  .r-step-content .r-desc { font-size: 13px; color: var(--slate); }
+
+  /* ── PUNCTUATION TABLE ── */
+  .punct-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13px; }
+  .punct-table th {
+    background: var(--navy);
+    color: #fff;
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 500;
+  }
+  .punct-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .punct-table tr:nth-child(even) td { background: var(--navy-light); }
+  .punct-table td:first-child { font-weight: 600; color: var(--navy); font-size: 15px; }
+
+  /* ── INTERPERSONAL TABLE ── */
+  .ip-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13px; }
+  .ip-table th { background: var(--teal); color: #fff; padding: 8px 12px; text-align: left; font-weight: 500; }
+  .ip-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .ip-table tr:nth-child(even) td { background: var(--teal-light); }
+
+  /* ── LETTER BOX ── */
+  .letter-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 22px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    color: var(--slate);
+    margin-bottom: 16px;
+    line-height: 1.8;
+  }
+  .letter-box .letter-part { color: var(--navy); font-weight: 600; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+
+  /* ── BADGE ── */
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 9px;
+    border-radius: 20px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+  .badge-navy { background: var(--navy-light); color: var(--navy); }
+  .badge-gold { background: var(--gold-light); color: var(--gold-dark); }
+  .badge-teal { background: var(--teal-light); color: var(--teal); }
+  .badge-rose { background: var(--rose-light); color: var(--rose); }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    padding: 24px 20px;
+    font-size: 13px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    margin-top: 20px;
+  }
+
+  /* ── FLOWCHART SVG INTERNALS ── */
+  .fc-box { fill: var(--navy); rx: 8; }
+  text { font-family: 'Source Sans 3', sans-serif; }
+
+  /* ── QUICK REF ── */
+  .quick-ref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+  @media (max-width: 500px) { .quick-ref-grid { grid-template-columns: 1fr; } }
+  .qr-card {
+    border-radius: 10px;
+    border: 1px solid;
+    padding: 12px 14px;
+  }
+  .qr-card .qr-title { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  .qr-card ul { padding-left: 16px; }
+  .qr-card li { font-size: 12px; margin-bottom: 3px; }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-tag">Final Exam</div>
+  <h1>Expository Writing<br>Complete Study Guide</h1>
+  <p>All 12 topics · Definitions · Examples · Practice questions · Quick-revision flowcharts</p>
+</div>
+
+<!-- ── NAV ── -->
+<nav class="nav-wrap">
+  <a class="nav-pill" href="#s1">1. Expository Writing</a>
+  <a class="nav-pill" href="#s2">2. Essay & Article</a>
+  <a class="nav-pill" href="#s3">3. Rhetorical Appeals</a>
+  <a class="nav-pill" href="#s4">4. Reading Skills</a>
+  <a class="nav-pill" href="#s5">5. Photo Essay</a>
+  <a class="nav-pill" href="#s6">6. Interview Skills</a>
+  <a class="nav-pill" href="#s7">7. Research Methodology</a>
+  <a class="nav-pill" href="#s8">8. Report Writing</a>
+  <a class="nav-pill" href="#s9">9. Interpersonal Skills</a>
+  <a class="nav-pill" href="#s10">10. Letter Writing</a>
+  <a class="nav-pill" href="#s11">11. Punctuation</a>
+  <a class="nav-pill" href="#s12">12. Rhetorical Devices</a>
+</nav>
+
+<div class="wrap">
+
+<!-- ══════════════════════════════════════════
+     TOPIC 1 — EXPOSITORY WRITING
+══════════════════════════════════════════ -->
+<section id="s1">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <div class="section-title">Expository Writing</div>
+  </div>
+
+  <div class="def-box">
+    <div class="def-term">Definition</div>
+    <p>Expository writing is a type of writing that aims to <strong>explain, inform, or describe</strong> a topic clearly and objectively using facts, evidence, and logical organisation — without expressing personal opinion.</p>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-title">🗂 Types of Expository Writing — Quick Map</div>
+    <svg width="100%" viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#1A2640" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+      <!-- Central node -->
+      <rect x="240" y="20" width="200" height="48" rx="10" fill="#1A2640"/>
+      <text x="340" y="49" text-anchor="middle" fill="#C9922B" font-size="14" font-weight="600" font-family="Source Sans 3, sans-serif">Expository Writing</text>
+
+      <!-- Type 1 -->
+      <rect x="30" y="120" width="150" height="56" rx="8" fill="#E8EDF5" stroke="#1A2640" stroke-width="0.8"/>
+      <text x="105" y="143" text-anchor="middle" fill="#1A2640" font-size="13" font-weight="600" font-family="Source Sans 3, sans-serif">Informative</text>
+      <text x="105" y="160" text-anchor="middle" fill="#4A5568" font-size="11" font-family="Source Sans 3, sans-serif">Presents facts &amp; data</text>
+
+      <!-- Type 2 -->
+      <rect x="210" y="120" width="150" height="56" rx="8" fill="#D6F0EC" stroke="#1A7A6E" stroke-width="0.8"/>
+      <text x="285" y="143" text-anchor="middle" fill="#1A7A6E" font-size="13" font-weight="600" font-family="Source Sans 3, sans-serif">Explanatory</text>
+      <text x="285" y="160" text-anchor="middle" fill="#1A4A44" font-size="11" font-family="Source Sans 3, sans-serif">Explains how/why</text>
+
+      <!-- Type 3 -->
+      <rect x="390" y="120" width="150" height="56" rx="8" fill="#F5E6C8" stroke="#C9922B" stroke-width="0.8"/>
+      <text x="465" y="143" text-anchor="middle" fill="#8A6118" font-size="13" font-weight="600" font-family="Source Sans 3, sans-serif">Descriptive</text>
+      <text x="465" y="160" text-anchor="middle" fill="#5A4010" font-size="11" font-family="Source Sans 3, sans-serif">Paints vivid picture</text>
+
+      <!-- Type 4 -->
+      <rect x="570" y="120" width="100" height="56" rx="8" fill="#F5E0E3" stroke="#9B3A4A" stroke-width="0.8"/>
+      <text x="620" y="143" text-anchor="middle" fill="#9B3A4A" font-size="13" font-weight="600" font-family="Source Sans 3, sans-serif">Process</text>
+      <text x="620" y="160" text-anchor="middle" fill="#5A2030" font-size="11" font-family="Source Sans 3, sans-serif">Step-by-step</text>
+
+      <!-- Arrows from central to types -->
+      <line x1="280" y1="68" x2="145" y2="120" stroke="#1A2640" stroke-width="1" marker-end="url(#arr)"/>
+      <line x1="320" y1="68" x2="290" y2="120" stroke="#1A7A6E" stroke-width="1" marker-end="url(#arr)"/>
+      <line x1="370" y1="68" x2="460" y2="120" stroke="#C9922B" stroke-width="1" marker-end="url(#arr)"/>
+      <line x1="430" y1="68" x2="615" y2="120" stroke="#9B3A4A" stroke-width="1" marker-end="url(#arr)"/>
+
+      <!-- Examples row -->
+      <text x="105" y="205" text-anchor="middle" fill="#718096" font-size="11" font-family="Source Sans 3, sans-serif">e.g. News article</text>
+      <text x="285" y="205" text-anchor="middle" fill="#718096" font-size="11" font-family="Source Sans 3, sans-serif">e.g. "Why volcanoes erupt"</text>
+      <text x="465" y="205" text-anchor="middle" fill="#718096" font-size="11" font-family="Source Sans 3, sans-serif">e.g. Travel writing</text>
+      <text x="620" y="205" text-anchor="middle" fill="#718096" font-size="11" font-family="Source Sans 3, sans-serif">e.g. Recipe</text>
+
+      <!-- Purpose bar -->
+      <rect x="30" y="225" width="640" height="36" rx="8" fill="#1A2640"/>
+      <text x="340" y="248" text-anchor="middle" fill="#F5E6C8" font-size="13" font-weight="500" font-family="Source Sans 3, sans-serif">Purpose: To INFORM · To EXPLAIN · To DESCRIBE — never to persuade</text>
+    </svg>
+  </div>
+
+  <div class="card-grid">
+    <div class="type-card">
+      <div class="card-icon">📰</div>
+      <div class="card-title">Informative Writing</div>
+      <div class="card-desc">Provides facts and information about a topic without bias. Answers <em>What? Who? Where? When?</em></div>
+      <div class="example-label">Example topic</div>
+      <div class="example">"The water cycle and its stages"</div>
+    </div>
+    <div class="type-card">
+      <div class="card-icon">💡</div>
+      <div class="card-title">Explanatory Writing</div>
+      <div class="card-desc">Explains <em>how</em> or <em>why</em> something works. Breaks down complex ideas into understandable parts.</div>
+      <div class="example-label">Example topic</div>
+      <div class="example">"How inflation affects the economy"</div>
+    </div>
+    <div class="type-card">
+      <div class="card-icon">🖼️</div>
+      <div class="card-title">Descriptive Writing</div>
+      <div class="card-desc">Creates a vivid picture of a person, place, or thing using specific sensory details.</div>
+      <div class="example-label">Example topic</div>
+      <div class="example">"Describe the Grand Bazaar of Istanbul"</div>
+    </div>
+    <div class="type-card">
+      <div class="card-icon">🔢</div>
+      <div class="card-title">Process Writing</div>
+      <div class="card-desc">Explains a procedure step-by-step. Clear sequence is essential. Answers <em>How is it done?</em></div>
+      <div class="example-label">Example topic</div>
+      <div class="example">"How to conduct a scientific experiment"</div>
+    </div>
+  </div>
+
+  <div class="gold-box">
+    <div class="g-head">✏️ Key Features of Expository Writing</div>
+    <ul>
+      <li>Objective tone — no personal opinions ("I think", "I believe")</li>
+      <li>Uses facts, statistics, examples as evidence</li>
+      <li>Clear, logical structure (intro → body → conclusion)</li>
+      <li>Third-person point of view</li>
+      <li>Precise, formal vocabulary</li>
+    </ul>
+  </div>
+
+  <div class="practice-box">
+    <div class="pr-head">🎯 Practice Questions</div>
+    <ul>
+      <li>What is the difference between informative and explanatory writing?</li>
+      <li>Write an informative paragraph about climate change (no opinions!).</li>
+      <li>Identify which type: "The Nile River flows 6,650 km through northeastern Africa." → <em>Informative</em></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TOPIC 2 — ESSAY & ARTICLE WRITING
+══════════════════════════════════════════ -->
+<section id="s2">
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <div class="section-title">Essay Writing & Article Writing</div>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-title">📐 Essay Structure Flowchart</div>
+    <svg width="100%" viewBox="0 0 380 420" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#718096" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+      <!-- Introduction -->
+      <rect x="60" y="20" width="260" height="68" rx="10" fill="#1A2640"/>
+      <text x="190" y="48" text-anchor="middle" fill="#C9922B" font-size="14" font-weight="600" font-family="Source Sans 3, sans-serif">Introduction</text>
+      <text x="190" y="66" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="11" font-family="Source Sans 3, sans-serif">Hook · Background · Thesis statement</text>
+
+      <line x1="190" y1="88" x2="190" y2="108" stroke="#718096" stroke-width="1.2" marker-end="url(#arr2)"/>
+
+      <!-- Body 1 -->
+      <rect x="60" y="108" width="260" height="56" rx="8" fill="#E8EDF5" stroke="#1A2640" stroke-width="0.8"/>
+      <text x="190" y="131" text-anchor="middle" fill="#1A2640" font-size="13" font-weight="600" font-family="Source Sans 3, sans-serif">Body Paragraph 1</text>
+      <text x="190" y="150" text-anchor="middle" fill="#4A5568" font-size="11" font-family="Source Sans 3, sans-serif">Topic sentence · Evidence · Analysis · Transition</text>
+
+      <line x1="190" y1="164" x2="190" y2="184" stroke="#718096" stroke-width="1.2" marker-end="url(#arr2)"/>
+
+      <!-- Body 2 -->
+      <rect x="60" y="184" width="260" height="56" rx="8" fill="#E8EDF5" stroke="#1A2640" stroke-width="0.8"/>
+      <text x="190" y="207" text-anchor="middle" fill="#1A2640" font-size="13" font-weight="600" font-family="Source Sans 3, sans-serif">Body Paragraph 2</text>
+      <text x="190" y="226" text-anchor="middle" fill="#4A5568" font-size="11" font-family="Source Sans 3, sans-serif">Topic sentence · Evidence · Analysis · Transition</text>
+
+      <line x1="190" y1="240" x2="190" y2="260" stroke="#718096" stroke-width="1.2" marker-end="url(#arr2)"/>
+
+      <!-- Body 3 -->
+      <rect x="60" y="260" width="260" height="56" rx="8" fill="#E8EDF5" stroke="#1A2640" stroke-width="0.8"/>
+      <text x="190" y="283" text-anchor="middle" fill="#1A2640" font-size="13" font-weight="600" font-family="Source Sans 3, sans-serif">Body Paragraph 3</text>
+      <text x="190" y="302" text-anchor="middle" fill="#4A5568" font-size="11" font-family="Source Sans 3, sans-serif">Topic sentence · Evidence · Analysis · Transition</text>
+
+      <line x1="190" y1="316" x2="190" y2="336" stroke="#718096" stroke-width="1.2" marker-end="url(#arr2)"/>
+
+      <!-- Conclusion -->
+      <rect x="60" y="336" width="260" height="60" rx="10" fill="#1A7A6E"/>
+      <text x="190" y="360" text-anchor="middle" fill="#fff" font-size="14" font-weight="600" font-family="Source Sans 3, sans-serif">Conclusion</text>
+      <text x="190" y="379" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="11" font-family="Source Sans 3, sans-serif">Restate thesis · Summarise · Closing thought</text>
+    </svg>
+  </div>
+
+  <div class="def-box">
+    <div class="def-term">Thesis Statement</div>
+    <p>A single sentence that states the main argument or point of an essay. It appears at the end of the introduction and guides the entire essay.</p>
+  </div>
+
+  <div class="example-box">
+    <div class="ex-head">✅ Strong Thesis Example</div>
+    <p>"Social media has transformed political activism by enabling rapid mobilisation, broadening participation, and amplifying marginalised voices — though it also poses serious risks of misinformation."</p>
+  </div>
+
+  <div class="def-box">
+    <div class="def-term">Article Analysis Writing — WHAT, HOW, WHY</div>
+    <p><strong>What</strong> is the article about? → <strong>How</strong> does the writer develop their ideas? → <strong>Why</strong> is this effective/ineffective? Always support with evidence from the text.</p>
+  </div>
+
+  <div class="gold-box">
+    <div class="g-head">📌 Article vs Essay — Key Differences</div>
+    <ul>
+      <li><strong>Essay:</strong> Academic, formal, thesis-driven, no subheadings usually</li>
+      <li><strong>Article:</strong> Publication-ready, can have subheadings, audience-aware, often includes quotes from sources</li>
+      <li>Both require: clear structure, evidence, and coherent argument</li>
+    </ul>
+  </div>
+
+  <div class="practice-box">
+    <div class="pr-head">🎯 Practice Questions</div>
+    <ul>
+      <li>Write a thesis statement on: "The impact of technology on education"</li>
+      <li>Analyse: How does the writer use statistics in this article? What effect does this create?</li>
+      <li>What makes a topic sentence effective? Write one for a body paragraph on pollution.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TOPIC 3 — RHETORICAL APPEALS
+══════════════════════════════════════════ -->
+<section id="s3">
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <div class="section-title">Rhetorical Appeals</div>
+  </div>
+
+  <div class="def-box">
+    <div class="def-term">Definition</div>
+    <p>Rhetorical appeals are strategies used by writers and speakers to persuade an audience. Aristotle identified three primary appeals: <strong>Ethos, Pathos, and Logos</strong>.</p>
+  </div>
+
+  <div class="appeals-row">
+    <div class="appeal-card" style="background:#E8EDF5; border:1px solid #1A2640;">
+      <div class="appeal-letter" style="color:#1A2640;">E</div>
+      <div class="appeal-name" style="color:#1A2640;">Ethos</div>
+      <div class="appeal-desc" style="color:#4A5568;">Appeal to <strong>credibility</strong>. Establishes the author's authority or trustworthiness.</div>
+    </div>
+    <div class="appeal-card" style="background:#F5E0E3; border:1px solid #9B3A4A;">
+      <div class="appeal-letter" style="color:#9B3A4A;">P</div>
+      <div class="appeal-name" style="color:#9B3A4A;">Pathos</div>
+      <div class="appeal-desc" style="color:#5A2030;">Appeal to <strong>emotion</strong>. Connects with the audience's feelings and values.</div>
+    </div>
+    <div class="appeal-card" style="background:#D6F0EC; border:1px solid #1A7A6E;">
+      <div class="appeal-letter" style="color:#1A7A6E;">L</div>
+      <div class="appeal-name" style="color:#1A7A6E;">Logos</div>
+      <div class="appeal-desc" style="color:#1A4A44;">Appeal to <strong>logic</strong>. Uses facts, data, and reasoned argument.</div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="ex-head">✅ Examples in Context</div>
+    <p><strong>Ethos:</strong> "As a doctor with 20 years of experience, I can confirm that vaccination is safe." — appeals to professional authority.<br><br>
+    <strong>Pathos:</strong> "Every year, thousands of children go to sleep hungry. Can we really afford to ignore them?" — evokes guilt and empathy.<br><br>
+    <strong>Logos:</strong> "Studies show that countries with universal healthcare have 15% lower mortality rates." — uses data and reasoning.</p>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-title">🔺 Rhetorical Triangle</div>
+    <svg width="100%" viewBox="0 0 380 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- Triangle -->
+      <polygon points="190,20 40,180 340,180" fill="none" stroke="#1A2640" stroke-width="1.5"/>
+      <!-- Ethos top -->
+      <circle cx="190" cy="20" r="28" fill="#1A2640"/>
+      <text x="190" y="17" text-anchor="middle" fill="#C9922B" font-size="13" font-weight="700" font-family="Source Sans 3, sans-serif">Ethos</text>
+      <text x="190" y="31" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="10" font-family="Source Sans 3, sans-serif">Credibility</text>
+      <!-- Pathos left -->
+      <circle cx="40" cy="180" r="32" fill="#9B3A4A"/>
+      <text x="40" y="176" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" font-family="Source Sans 3, sans-serif">Pathos</text>
+      <text x="40" y="191" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10" font-family="Source Sans 3, sans-serif">Emotion</text>
+      <!-- Logos right -->
+      <circle cx="340" cy="180" r="32" fill="#1A7A6E"/>
+      <text x="340" y="176" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" font-family="Source Sans 3, sans-serif">Logos</text>
+      <text x="340" y="191" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10" font-family="Source Sans 3, sans-serif">Logic</text>
+      <!-- Centre -->
+      <text x="190" y="115" text-anchor="middle" fill="#718096" font-size="12" font-family="Source Sans 3, sans-serif">Persuasion</text>
+      <text x="190" y="131" text-anchor="middle" fill="#718096" font-size="11" font-family="Source Sans 3, sans-serif">is most effective when</text>
+      <text x="190" y="147" text-anchor="middle" fill="#718096" font-size="11" font-family="Source Sans 3, sans-serif">all three work together</text>
+    </svg>
+  </div>
+
+  <div class="practice-box">
+    <div class="pr-head">🎯 Practice Questions</div>
+    <ul>
+      <li>Identify the rhetorical appeal: "Nine out of ten dentists recommend this toothpaste."</li>
+      <li>Write one sentence using Pathos on the topic of environmental destruction.</li>
+      <li>Why is it important to balance all three appeals in writing?</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TOPIC 4 — READING SKILLS
+══════════════════════════════════════════ -->
+<section id="s4">
+  <div class="section-header">
+    <div class="section-num">4</div>
+    <div class="section-title">Reading Skills — Skimming & Scanning</div>
+  </div>
+
+  <div class="card-grid">
+    <div class="type-card" style="border-color:#1A2640; border-width:2px;">
+      <div class="card-icon">⚡</div>
+      <div class="card-title">Skimming</div>
+      <div class="card-desc">Reading quickly to get the <strong>general idea / main topic</strong> of a text. You don't read every word.</div>
+      <div class="example-label">How to skim</div>
+      <div class="example">Read title, headings, first & last sentences of paragraphs, bold words.</div>
+      <div class="example-label" style="margin-top:8px;">When to use</div>
+      <div class="example">Deciding if an article is relevant; previewing a textbook chapter.</div>
+    </div>
+    <div class="type-card" style="border-color:#1A7A6E; border-width:2px;">
+      <div class="card-icon">🔍</div>
+      <div class="card-title">Scanning</div>
+      <div class="card-desc">Searching for a <strong>specific piece of information</strong> (name, date, statistic) without reading everything.</div>
+      <div class="example-label">How to scan</div>
+      <div class="example">Let your eyes dart across the page looking for keywords, numbers, or specific terms.</div>
+      <div class="example-label" style="margin-top:8px;">When to use</div>
+      <div class="example">Finding a phone number in a directory; locating a fact in a report.</div>
+    </div>
+  </div>
+
+  <div class="gold-box">
+    <div class="g-head">⚡ Memory Trick</div>
+    <p><strong>SKIM</strong> = General → like skimming cream off milk (get the top layer)<br>
+    <strong>SCAN</strong> = Specific → like a barcode scanner (looking for one exact thing)</p>
+  </div>
+
+  <div class="practice-box">
+    <div class="pr-head">🎯 Practice Questions</div>
+    <ul>
+      <li>You need to find the year a treaty was signed. Skim or scan?</li>
+      <li>You want to know if a 20-page report is about climate policy. Skim or scan?</li>
+      <li>List three strategies you use when skimming a newspaper article.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TOPIC 5 — PHOTO ESSAY & PICTURE DESCRIPTION
+══════════════════════════════════════════ -->
+<section id="s5">
+  <div class="section-header">
+    <div class="section-num">5</div>
+    <div class="section-title">Photo Essay & Picture Description</div>
+  </div>
+
+  <div class="def-box">
+    <div class="def-term">Photo Essay</div>
+    <p>A collection of photographs arranged with accompanying text to tell a story or convey a message. Each photo contributes to the central theme.</p>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-title">🖼 Picture Description Framework — WHAT · HOW · WHY</div>
+    <svg width="100%" viewBox="0 0 680 180" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#718096" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+      <rect x="30" y="40" width="170" height="100" rx="10" fill="#1A2640"/>
+      <text x="115" y="78" text-anchor="middle" fill="#C9922B" font-size="16" font-weight="700" font-family="Source Sans 3, sans-serif">WHAT</text>
+      <text x="115" y="96" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11" font-family="Source Sans 3, sans-serif">Describe what you see</text>
+      <text x="115" y="112" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="11" font-family="Source Sans 3, sans-serif">People, objects, setting</text>
+      <text x="115" y="128" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="11" font-family="Source Sans 3, sans-serif">colours, composition</text>
+
+      <line x1="200" y1="90" x2="248" y2="90" stroke="#718096" stroke-width="1" marker-end="url(#arr3)"/>
+
+      <rect x="250" y="40" width="170" height="100" rx="10" fill="#1A7A6E"/>
+      <text x="335" y="78" text-anchor="middle" fill="#fff" font-size="16" font-weight="700" font-family="Source Sans 3, sans-serif">HOW</text>
+      <text x="335" y="96" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11" font-family="Source Sans 3, sans-serif">Analyse techniques</text>
+      <text x="335" y="112" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="11" font-family="Source Sans 3, sans-serif">Lighting, angle, focus</text>
+      <text x="335" y="128" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="11" font-family="Source Sans 3, sans-serif">contrast, framing</text>
+
+      <line x1="420" y1="90" x2="468" y2="90" stroke="#718096" stroke-width="1" marker-end="url(#arr3)"/>
+
+      <rect x="470" y="40" width="170" height="100" rx="10" fill="#9B3A4A"/>
+      <text x="555" y="78" text-anchor="middle" fill="#fff" font-size="16" font-weight="700" font-family="Source Sans 3, sans-serif">WHY</text>
+      <text x="555" y="96" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11" font-family="Source Sans 3, sans-serif">Interpret effect/purpose</text>
+      <text x="555" y="112" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="11" font-family="Source Sans 3, sans-serif">What emotion/message</text>
+      <text x="555" y="128" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="11" font-family="Source Sans 3, sans-serif">does it convey?</text>
+    </svg>
+  </div>
+
+  <div class="example-box">
+    <div class="ex-head">✅ Sample Picture Description</div>
+    <p><strong>WHAT:</strong> The image shows an elderly woman sitting alone on a park bench, surrounded by falling autumn leaves.<br>
+    <strong>HOW:</strong> The photographer uses a shallow depth of field, blurring the background to isolate the subject. The muted, golden colour palette enhances the melancholic atmosphere.<br>
+    <strong>WHY:</strong> This creates a sense of loneliness and the passage of time, inviting the viewer to reflect on aging and solitude.</p>
+  </div>
+
+  <div class="practice-box">
+    <div class="pr-head">🎯 Practice Questions</div>
+    <ul>
+      <li>What is the difference between a photo essay and a series of random photos?</li>
+      <li>How does lighting affect the mood of a photograph?</li>
+      <li>Practice: Look at any photo and write a WHAT-HOW-WHY analysis in 3 paragraphs.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TOPIC 6 — INTERVIEW SKILLS
+══════════════════════════════════════════ -->
+<section id="s6">
+  <div class="section-header">
+    <div class="section-num">6</div>
+    <div class="section-title">Interview Skills</div>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-title">💼 Interview Structure Flowchart</div>
+    <svg width="100%" viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#718096" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+      <rect x="20" y="40" width="120" height="60" rx="8" fill="#1A2640"/>
+      <text x="80" y="66" text-anchor="middle" fill="#C9922B" font-size="12" font-weight="600" font-family="Source Sans 3, sans-serif">Opening</text>
+      <text x="80" y="83" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="10" font-family="Source Sans 3, sans-serif">Greet · Small talk</text>
+
+      <line x1="140" y1="70" x2="168" y2="70" stroke="#718096" stroke-width="1" marker-end="url(#arr4)"/>
+
+      <rect x="170" y="40" width="140" height="60" rx="8" fill="#E8EDF5" stroke="#1A2640" stroke-width="0.8"/>
+      <text x="240" y="66" text-anchor="middle" fill="#1A2640" font-size="12" font-weight="600" font-family="Source Sans 3, sans-serif">Core Questions</text>
+      <text x="240" y="83" text-anchor="middle" fill="#4A5568" font-size="10" font-family="Source Sans 3, sans-serif">Open-ended questions</text>
+
+      <line x1="310" y1="70" x2="338" y2="70" stroke="#718096" stroke-width="1" marker-end="url(#arr4)"/>
+
+      <rect x="340" y="40" width="140" height="60" rx="8" fill="#D6F0EC" stroke="#1A7A6E" stroke-width="0.8"/>
+      <text x="410" y="66" text-anchor="middle" fill="#1A7A6E" font-size="12" font-weight="600" font-family="Source Sans 3, sans-serif">Follow-up Qs</text>
+      <text x="410" y="83" text-anchor="middle" fill="#1A4A44" font-size="10" font-family="Source Sans 3, sans-serif">Probe deeper answers</text>
+
+      <line x1="480" y1="70" x2="508" y2="70" stroke="#718096" stroke-width="1" marker-end="url(#arr4)"/>
+
+      <rect x="510" y="40" width="140" height="60" rx="8" fill="#F5E6C8" stroke="#C9922B" stroke-width="0.8"/>
+      <text x="580" y="66" text-anchor="middle" fill="#8A6118" font-size="12" font-weight="600" font-family="Source Sans 3, sans-serif">Closing</text>
+      <text x="580" y="83" text-anchor="middle" fill="#5A4010" font-size="10" font-family="Source Sans 3, sans-serif">Thank · Summarise</text>
+
+      <!-- Labels below -->
+      <text x="80" y="130" text-anchor="middle" fill="#718096" font-size="10" font-family="Source Sans 3, sans-serif">Rapport</text>
+      <text x="240" y="130" text-anchor="middle" fill="#718096" font-size="10" font-family="Source Sans 3, sans-serif">How? What? Why? Tell me about...</text>
+      <text x="410" y="130" text-anchor="middle" fill="#718096" font-size="10" font-family="Source Sans 3, sans-serif">Can you elaborate? Give an example...</text>
+      <text x="580" y="130" text-anchor="middle" fill="#718096" font-size="10" font-family="Source Sans 3, sans-serif">Confirm, wrap up</text>
+    </svg>
+  </div>
+
+  <div class="card-grid">
+    <div class="type-card">
+      <div class="card-icon">🗣</div>
+      <div class="card-title">Interview Techniques</div>
+      <div class="card-desc">
+        <strong>Open questions:</strong> Invite detailed answers ("Tell me about...")<br>
+        <strong>Closed questions:</strong> Yes/No answers — use sparingly<br>
+        <strong>Probing:</strong> "Can you give an example?"<br>
+        <strong>Active listening:</strong> Nodding, paraphrasing back<br>
+        <strong>Silence:</strong> Allow the interviewee time to think
+      </div>
+    </div>
+    <div class="type-card">
+      <div class="card-icon">🎭</div>
+      <div class="card-title">Role Play Dialogues</div>
+      <div class="card-desc">
+        In role play, adopt the character's voice and purpose.<br><br>
+        <strong>Key elements:</strong> Appropriate register (formal/informal), turn-taking, staying in character, responding naturally to cues.
+      </div>
+      <div class="example-label">Tip</div>
+      <div class="example">Prepare opening, 4–5 core questions, and a polite closing.</div>
+    </div>
+  </div>
+
+  <div class="practice-box">
+    <div class="pr-head">🎯 Practice Questions</div>
+    <ul>
+      <li>Write 5 open-ended questions for an interview with a scientist about climate change.</li>
+      <li>Convert this closed question to open: "Do you like your job?" → ?</li>
+      <li>Write a role-play dialogue: journalist interviewing a climate activist (10 exchanges).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TOPIC 7 — RESEARCH METHODOLOGY
+══════════════════════════════════════════ -->
+<section id="s7">
+  <div class="section-header">
+    <div class="section-num">7</div>
+    <div class="section-title">Research Methodology</div>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-title">🔬 Research Paper Structure</div>
+    <svg width="100%" viewBox="0 0 380 500" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#1A7A6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+      <!-- Steps stacked -->
+      <rect x="60" y="20" width="260" height="52" rx="10" fill="#1A2640"/>
+      <text x="190" y="43" text-anchor="middle" fill="#C9922B" font-size="13" font-weight="600" font-family="Source Sans 3, sans-serif">Title Writing</text>
+      <text x="190" y="60" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="10" font-family="Source Sans 3, sans-serif">Clear, specific, informative title</text>
+
+      <line x1="190" y1="72" x2="190" y2="92" stroke="#1A7A6E" stroke-width="1.2" marker-end="url(#arr5)"/>
+
+      <rect x="60" y="92" width="260" height="52" rx="8" fill="#E8EDF5" stroke="#1A2640" stroke-width="0.8"/>
+      <text x="190" y="115" text-anchor="middle" fill="#1A2640" font-size="13" font-weight="600" font-family="Source Sans 3, sans-serif">Introduction</text>
+      <text x="190" y="132" text-anchor="middle" fill="#4A5568" font-size="10" font-family="Source Sans 3, sans-serif">Background, problem, research purpose</text>
+
+      <line x1="190" y1="144" x2="190" y2="164" stroke="#1A7A6E" stroke-width="1.2" marker-end="url(#arr5)"/>
+
+      <rect x="60" y="164" width="260" height="52" rx="8" fill="#E8EDF5" stroke="#1A2640" stroke-width="0.8"/>
+      <text x="190" y="187" text-anchor="middle" fill="#1A2640" font-size="13" font-weight="600" font-family="Source Sans 3, sans-serif">Literature Review</text>
+      <text x="190" y="204" text-anchor="middle" fill="#4A5568" font-size="10" font-family="Source Sans 3, sans-serif">Existing research, gaps, theoretical frame</text>
+
+      <line x1="190" y1="216" x2="190" y2="236" stroke="#1A7A6E" stroke-width="1.2" marker-end="url(#arr5)"/>
+
+      <rect x="60" y="236" width="260" height="52" rx="8" fill="#E8EDF5" stroke="#1A7A6E" stroke-width="0.8"/>
+      <text x="190" y="259" text-anchor="middle" fill="#1A7A6E" font-size="13" font-weight="600" font-family="Source Sans 3, sans-serif">Methodology</text>
+      <text x="190" y="276" text-anchor="middle" fill="#1A4A44" font-size="10" font-family="Source Sans 3, sans-serif">How data was collected &amp; why this method</text>
+
+      <line x1="190" y1="288" x2="190" y2="308" stroke="#1A7A6E" stroke-width="1.2" marker-end="url(#arr5)"/>
+
+      <rect x="60" y="308" width="260" height="52" rx="8" fill="#E8EDF5" stroke="#1A7A6E" stroke-width="0.8"/>
+      <text x="190" y="331" text-anchor="middle" fill="#1A7A6E" font-size="13" font-weight="600" font-family="Source Sans 3, sans-serif">Analysis</text>
+      <text x="190" y="348" text-anchor="middle" fill="#1A4A44" font-size="10" font-family="Source Sans 3, sans-serif">Interpret data, identify patterns</text>
+
+      <line x1="190" y1="360" x2="190" y2="380" stroke="#1A7A6E" stroke-width="1.2" marker-end="url(#arr5)"/>
+
+      <rect x="60" y="380" width="260" height="52" rx="8" fill="#D6F0EC" stroke="#1A7A6E" stroke-width="0.8"/>
+      <text x="190" y="403" text-anchor="middle" fill="#1A7A6E" font-size="13" font-weight="600" font-family="Source Sans 3, sans-serif">Conclusion</text>
+      <text x="190" y="420" text-anchor="middle" fill="#1A4A44" font-size="10" font-family="Source Sans 3, sans-serif">Answer research question, limitations</text>
+
+      <line x1="190" y1="432" x2="190" y2="452" stroke="#1A7A6E" stroke-width="1.2" marker-end="url(#arr5)"/>
+
+      <rect x="60" y="452" width="260" height="36" rx="8" fill="#F5E6C8" stroke="#C9922B" stroke-width="0.8"/>
+      <text x="190" y="475" text-anchor="middle" fill="#8A6118" font-size="13" font-weight="600" font-family="Source Sans 3, sans-serif">Bibliography / References</text>
+    </svg>
+  </div>
+
+  <div class="gold-box">
+    <div class="g-head">📌 Key Definitions</div>
+    <ul>
+      <li><strong>Literature Review:</strong> A survey of existing research relevant to your topic — shows what is already known and where gaps exist.</li>
+      <li><strong>Methodology:</strong> The systematic approach used to collect and analyse data (qualitative/quantitative, surveys, experiments, etc.).</li>
+      <li><strong>Bibliography:</strong> Alphabetical list of all sources used, formatted according to a citation style (APA, MLA, etc.).</li>
+    </ul>
+  </div>
+
+  <div class="example-box">
+    <div class="ex-head">✅ Good Research Title Examples</div>
+    <p>❌ Weak: "About Climate Change"<br>
+    ✅ Strong: "The Impact of Industrial Emissions on Urban Air Quality in Pakistan: A Case Study of Lahore (2018–2023)"</p>
+  </div>
+
+  <div class="practice-box">
+    <div class="pr-head">🎯 Practice Questions</div>
+    <ul>
+      <li>What is the purpose of a Literature Review?</li>
+      <li>Write a research title on: "Social media and mental health in teenagers"</li>
+      <li>Explain the difference between qualitative and quantitative methodology.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TOPIC 8 — REPORT WRITING
+══════════════════════════════════════════ -->
+<section id="s8">
+  <div class="section-header">
+    <div class="section-num">8</div>
+    <div class="section-title">Report Writing</div>
+  </div>
+
+  <div class="def-box">
+    <div class="def-term">Definition</div>
+    <p>A report is a structured document that presents information about a specific topic, event, or issue to a specific audience for a specific purpose — informing, analysing, or recommending.</p>
+  </div>
+
+  <div class="gold-box">
+    <div class="g-head">📋 Standard Report Structure</div>
+    <ul>
+      <li><strong>Title / Heading:</strong> Clear label (To, From, Date, Subject)</li>
+      <li><strong>Introduction:</strong> Purpose and scope of the report</li>
+      <li><strong>Findings:</strong> Organised information with subheadings</li>
+      <li><strong>Conclusion:</strong> Summary of key points</li>
+      <li><strong>Recommendations:</strong> (if required) What should be done</li>
+    </ul>
+  </div>
+
+  <div class="example-box">
+    <div class="ex-head">✅ Report Header Example</div>
+    <p>
+      <strong>TO:</strong> The Principal<br>
+      <strong>FROM:</strong> The Student Council<br>
+      <strong>DATE:</strong> 19 May 2026<br>
+      <strong>SUBJECT:</strong> Report on the Annual Science Fair
+    </p>
+  </div>
+
+  <div class="practice-box">
+    <div class="pr-head">🎯 Practice Questions</div>
+    <ul>
+      <li>Write the header and introduction for a report on: "Canteen facilities at the university"</li>
+      <li>How does a report differ from an essay? (Think: structure, purpose, audience)</li>
+      <li>Write two recommendations for improving library facilities.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TOPIC 9 — INTERPERSONAL WRITING SKILLS
+══════════════════════════════════════════ -->
+<section id="s9">
+  <div class="section-header">
+    <div class="section-num">9</div>
+    <div class="section-title">Interpersonal Writing Skills</div>
+  </div>
+
+  <table class="ip-table">
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Definition</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Attitude</strong></td>
+        <td>The writer's position or perspective toward the subject or reader</td>
+        <td>Respectful, critical, sympathetic, neutral</td>
+      </tr>
+      <tr>
+        <td><strong>Tone</strong></td>
+        <td>The emotional quality of the writing that reflects the writer's attitude</td>
+        <td>Formal, informal, urgent, sarcastic, hopeful</td>
+      </tr>
+      <tr>
+        <td><strong>Style</strong></td>
+        <td>The distinctive way a writer uses language — word choice, sentence length, structure</td>
+        <td>Concise & direct vs elaborate & descriptive</td>
+      </tr>
+      <tr>
+        <td><strong>Conflict Resolution</strong></td>
+        <td>Writing that addresses disagreements diplomatically — acknowledging, proposing, compromising</td>
+        <td>Formal complaint email with proposed solution</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="chart-wrap">
+    <div class="chart-title">💬 Tone Spectrum</div>
+    <svg width="100%" viewBox="0 0 680 80" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#1A2640" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+      <line x1="30" y1="40" x2="650" y2="40" stroke="#1A2640" stroke-width="2" marker-end="url(#arr6)"/>
+      <circle cx="30" cy="40" r="5" fill="#9B3A4A"/>
+      <text x="30" y="28" text-anchor="middle" fill="#9B3A4A" font-size="11" font-weight="600" font-family="Source Sans 3, sans-serif">Very</text>
+      <text x="30" y="65" text-anchor="middle" fill="#9B3A4A" font-size="11" font-family="Source Sans 3, sans-serif">Informal</text>
+      <circle cx="190" cy="40" r="5" fill="#C9922B"/>
+      <text x="190" y="28" text-anchor="middle" fill="#C9922B" font-size="11" font-weight="600" font-family="Source Sans 3, sans-serif">Casual</text>
+      <text x="190" y="65" text-anchor="middle" fill="#C9922B" font-size="11" font-family="Source Sans 3, sans-serif">Conversational</text>
+      <circle cx="340" cy="40" r="6" fill="#1A2640"/>
+      <text x="340" y="28" text-anchor="middle" fill="#1A2640" font-size="11" font-weight="600" font-family="Source Sans 3, sans-serif">Neutral</text>
+      <text x="340" y="65" text-anchor="middle" fill="#1A2640" font-size="11" font-family="Source Sans 3, sans-serif">Objective</text>
+      <circle cx="490" cy="40" r="5" fill="#1A7A6E"/>
+      <text x="490" y="28" text-anchor="middle" fill="#1A7A6E" font-size="11" font-weight="600" font-family="Source Sans 3, sans-serif">Semi-formal</text>
+      <text x="490" y="65" text-anchor="middle" fill="#1A7A6E" font-size="11" font-family="Source Sans 3, sans-serif">Professional</text>
+      <circle cx="640" cy="40" r="5" fill="#1A2640"/>
+      <text x="640" y="28" text-anchor="middle" fill="#1A2640" font-size="11" font-weight="600" font-family="Source Sans 3, sans-serif">Very</text>
+      <text x="640" y="65" text-anchor="middle" fill="#1A2640" font-size="11" font-family="Source Sans 3, sans-serif">Formal</text>
+    </svg>
+  </div>
+
+  <div class="example-box">
+    <div class="ex-head">✅ Conflict Resolution Email — Key Phrases</div>
+    <p>"I understand your concerns and appreciate your perspective..."<br>
+    "I would like to propose a solution that works for both parties..."<br>
+    "I believe we can reach a mutually beneficial agreement..."<br>
+    "I look forward to resolving this matter professionally."</p>
+  </div>
+
+  <div class="practice-box">
+    <div class="pr-head">🎯 Practice Questions</div>
+    <ul>
+      <li>Identify the tone: "It has come to my attention that the aforementioned terms have not been fulfilled." → Formal/Informal?</li>
+      <li>Rewrite in a formal tone: "Hey, the project thing didn't work out. Can we fix it?"</li>
+      <li>Write a conflict resolution email to a classmate about a group project dispute.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TOPIC 10 — LETTER WRITING
+══════════════════════════════════════════ -->
+<section id="s10">
+  <div class="section-header">
+    <div class="section-num">10</div>
+    <div class="section-title">Letter Writing</div>
+  </div>
+
+  <div class="card-grid">
+    <div class="type-card">
+      <div class="card-title">Formal Letter</div>
+      <div class="card-desc">Written to officials, businesses, institutions. Uses formal language, full addresses, specific structure.</div>
+      <div class="example-label">Uses</div>
+      <div class="example">Job application, complaint, request to authority, official inquiry</div>
+    </div>
+    <div class="type-card">
+      <div class="card-title">Informal Letter</div>
+      <div class="card-desc">Written to friends or family. Conversational tone, flexible structure, personal language.</div>
+      <div class="example-label">Uses</div>
+      <div class="example">Writing to a friend, personal updates, casual requests</div>
+    </div>
+  </div>
+
+  <div class="letter-box">
+    <div class="letter-part">📍 Formal Letter Structure</div><br>
+    <em>Your Address (top right)</em><br>
+    <em>Date</em><br><br>
+    <em>Recipient's Name &amp; Address (left)</em><br><br>
+    <strong>Dear Mr/Ms [Surname],</strong> ← Salutation<br><br>
+    <strong>Subject:</strong> [Clear one-line subject]<br><br>
+    [Opening paragraph — state purpose]<br>
+    [Body — details, evidence, explanation]<br>
+    [Closing paragraph — call to action or request]<br><br>
+    <strong>Yours sincerely,</strong> ← (if you know the name)<br>
+    <strong>Yours faithfully,</strong> ← (if you wrote "Dear Sir/Madam")<br>
+    [Signature + Printed Name]
+  </div>
+
+  <div class="gold-box">
+    <div class="g-head">⚡ Golden Rules</div>
+    <ul>
+      <li>"Dear Sir/Madam" → always end with "Yours faithfully"</li>
+      <li>"Dear Mr Smith" → always end with "Yours sincerely"</li>
+      <li>Formal letter: no contractions (don't → do not, can't → cannot)</li>
+      <li>Every letter needs a clear purpose stated in the first paragraph</li>
+    </ul>
+  </div>
+
+  <div class="practice-box">
+    <div class="pr-head">🎯 Practice Questions</div>
+    <ul>
+      <li>Write a formal letter to your university principal requesting an extension on an assignment.</li>
+      <li>Correct this closing: "Dear Sir, ... Yours sincerely" → What's wrong?</li>
+      <li>What are three differences between a formal and an informal letter?</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TOPIC 11 — PUNCTUATION
+══════════════════════════════════════════ -->
+<section id="s11">
+  <div class="section-header">
+    <div class="section-num">11</div>
+    <div class="section-title">Punctuation</div>
+  </div>
+
+  <table class="punct-table">
+    <thead>
+      <tr><th>Mark</th><th>Name</th><th>Rule</th><th>Example</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>.</td><td>Full stop / Period</td>
+        <td>Ends a declarative or imperative sentence</td>
+        <td>She went to the market.</td>
+      </tr>
+      <tr>
+        <td>,</td><td>Comma</td>
+        <td>Separates list items, clauses, introductory phrases</td>
+        <td>However, she was late.</td>
+      </tr>
+      <tr>
+        <td>;</td><td>Semicolon</td>
+        <td>Links two closely related independent clauses</td>
+        <td>It was cold; she wore a coat.</td>
+      </tr>
+      <tr>
+        <td>:</td><td>Colon</td>
+        <td>Introduces a list, explanation, or quotation</td>
+        <td>She bought three things: milk, bread, and eggs.</td>
+      </tr>
+      <tr>
+        <td>'</td><td>Apostrophe</td>
+        <td>Shows possession or marks omission in contractions</td>
+        <td>Ahmed's book. It's raining.</td>
+      </tr>
+      <tr>
+        <td>" "</td><td>Quotation marks</td>
+        <td>Encloses direct speech or titles of short works</td>
+        <td>He said, "I will return."</td>
+      </tr>
+      <tr>
+        <td>—</td><td>Em Dash</td>
+        <td>Adds emphasis or sets off a clause with stronger pause than a comma</td>
+        <td>She won — against all odds.</td>
+      </tr>
+      <tr>
+        <td>( )</td><td>Parentheses</td>
+        <td>Adds extra information that could be removed without changing meaning</td>
+        <td>He arrived late (as usual).</td>
+      </tr>
+      <tr>
+        <td>?</td><td>Question mark</td>
+        <td>Ends a direct question</td>
+        <td>Where are you going?</td>
+      </tr>
+      <tr>
+        <td>!</td><td>Exclamation mark</td>
+        <td>Expresses strong emotion; use sparingly in formal writing</td>
+        <td>Watch out!</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="practice-box">
+    <div class="pr-head">🎯 Practice Questions</div>
+    <ul>
+      <li>Add correct punctuation: "however the experiment failed because of three reasons heat pressure and time"</li>
+      <li>What is the difference between a colon and a semicolon? Give an example of each.</li>
+      <li>Correct: "Its the students fault that they're books aren't organised."</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TOPIC 12 — RHETORICAL DEVICES
+══════════════════════════════════════════ -->
+<section id="s12">
+  <div class="section-header">
+    <div class="section-num">12</div>
+    <div class="section-title">Rhetorical Devices — Purpose & Tone</div>
+  </div>
+
+  <div class="def-box">
+    <div class="def-term">Definition</div>
+    <p>Rhetorical devices are literary techniques used to strengthen a writer's argument, create a specific effect, or appeal to the audience. They shape both <strong>purpose</strong> and <strong>tone</strong>.</p>
+  </div>
+
+  <div class="quick-ref-grid">
+    <div class="qr-card" style="background:#E8EDF5; border-color:#1A2640;">
+      <div class="qr-title" style="color:#1A2640;">Repetition & Emphasis</div>
+      <ul style="color:#4A5568;">
+        <li><strong>Anaphora:</strong> Repeating a word/phrase at the start of successive sentences — "We shall fight... We shall never surrender."</li>
+        <li><strong>Alliteration:</strong> Repetition of consonant sounds — "Peter Piper picked..."</li>
+      </ul>
+    </div>
+    <div class="qr-card" style="background:#D6F0EC; border-color:#1A7A6E;">
+      <div class="qr-title" style="color:#1A7A6E;">Comparison Devices</div>
+      <ul style="color:#1A4A44;">
+        <li><strong>Simile:</strong> Comparison using "like" or "as" — "brave as a lion"</li>
+        <li><strong>Metaphor:</strong> Direct comparison — "Life is a journey"</li>
+        <li><strong>Analogy:</strong> Extended comparison to explain — "The brain is like a computer"</li>
+      </ul>
+    </div>
+    <div class="qr-card" style="background:#F5E6C8; border-color:#C9922B;">
+      <div class="qr-title" style="color:#8A6118;">Questions & Engagement</div>
+      <ul style="color:#5A4010;">
+        <li><strong>Rhetorical question:</strong> Asked for effect, not answer — "Can we afford to wait?"</li>
+        <li><strong>Hypophora:</strong> Raises a question then immediately answers it</li>
+      </ul>
+    </div>
+    <div class="qr-card" style="background:#F5E0E3; border-color:#9B3A4A;">
+      <div class="qr-title" style="color:#9B3A4A;">Tone-Shaping Devices</div>
+      <ul style="color:#5A2030;">
+        <li><strong>Irony:</strong> Saying the opposite of what is meant</li>
+        <li><strong>Hyperbole:</strong> Deliberate exaggeration — "I've told you a million times"</li>
+        <li><strong>Understatement:</strong> Downplaying something significant</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-title">🎯 Identifying Device → Effect → Purpose</div>
+    <svg width="100%" viewBox="0 0 680 140" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr7" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#718096" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+      <rect x="30" y="30" width="170" height="80" rx="10" fill="#1A2640"/>
+      <text x="115" y="60" text-anchor="middle" fill="#C9922B" font-size="13" font-weight="600" font-family="Source Sans 3, sans-serif">Identify Device</text>
+      <text x="115" y="78" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="11" font-family="Source Sans 3, sans-serif">Name the technique</text>
+      <text x="115" y="96" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10" font-family="Source Sans 3, sans-serif">"This is a metaphor..."</text>
+      <line x1="200" y1="70" x2="248" y2="70" stroke="#718096" stroke-width="1" marker-end="url(#arr7)"/>
+      <rect x="250" y="30" width="170" height="80" rx="10" fill="#1A7A6E"/>
+      <text x="335" y="60" text-anchor="middle" fill="#fff" font-size="13" font-weight="600" font-family="Source Sans 3, sans-serif">Analyse Effect</text>
+      <text x="335" y="78" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="11" font-family="Source Sans 3, sans-serif">What does it create?</text>
+      <text x="335" y="96" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10" font-family="Source Sans 3, sans-serif">"creates urgency/empathy..."</text>
+      <line x1="420" y1="70" x2="468" y2="70" stroke="#718096" stroke-width="1" marker-end="url(#arr7)"/>
+      <rect x="470" y="30" width="180" height="80" rx="10" fill="#9B3A4A"/>
+      <text x="560" y="60" text-anchor="middle" fill="#fff" font-size="13" font-weight="600" font-family="Source Sans 3, sans-serif">Link to Purpose</text>
+      <text x="560" y="78" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="11" font-family="Source Sans 3, sans-serif">Why did the writer use it?</text>
+      <text x="560" y="96" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10" font-family="Source Sans 3, sans-serif">"to persuade/inform/move..."</text>
+    </svg>
+  </div>
+
+  <div class="example-box">
+    <div class="ex-head">✅ Full Analysis Example</div>
+    <p>Sentence: <em>"Our planet is a patient with a fever — and we are the disease."</em><br><br>
+    <strong>Device:</strong> Metaphor — the planet is compared to a sick patient.<br>
+    <strong>Effect:</strong> Creates a sense of urgency and guilt; makes the abstract (climate change) feel personal and immediate.<br>
+    <strong>Purpose:</strong> To persuade the audience to take climate change seriously by positioning humans as the cause.</p>
+  </div>
+
+  <div class="practice-box">
+    <div class="pr-head">🎯 Practice Questions</div>
+    <ul>
+      <li>Identify the device and explain its effect: "Shall we surrender? No — we shall fight!"</li>
+      <li>Write one sentence using hyperbole to describe exam stress.</li>
+      <li>What is the difference between a simile and a metaphor? Give one example of each.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── MASTER REVISION CHART ── -->
+<div style="margin-top:40px;">
+  <div class="section-header" style="border-bottom-color:#9B3A4A;">
+    <div class="section-num" s
