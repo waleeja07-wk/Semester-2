@@ -1,4 +1,4 @@
-# SEM2
+# SEMESTER-2
 
 ## 📖 About This Repository
 
