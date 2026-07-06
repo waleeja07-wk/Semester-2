@@ -33,7 +33,7 @@ This repository is primarily for personal reference and backup. Feel free to bro
 
 ```bash
 git clone https://github.com/waleeja07-wk/Semester-2.git
-cd Semester
+cd Semester-2
 ```
 
 ## 📌 Note
