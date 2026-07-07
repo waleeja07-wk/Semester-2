@@ -1,9 +1,13 @@
+/* LAB LEARNING*/
+
 //aggregation can exist independently
 //base class- library khtm ho to book class khtm nhi hogi, book can exist independently
 
 //compostion need 1 obj in main
 //aggregation need 2 obj in main
 
+/*LAB 13 TASKS*/
+/* QUESTION 1*/
 // #include <iostream>
 // using namespace std;
   
@@ -67,6 +71,7 @@
 
 // }
 
+/* QUESTION 2*/
 // #include <iostream>
 // using namespace std;
 
@@ -112,119 +117,3 @@
 //     return 0;
 // }
 
-
-
-#include <iostream>
-#include <vector>
-#include <string>
-#include <iomanip>
-
-using namespace std;
-
-// Structure to hold course information
-struct Course {
-    string name;
-    double marks;
-    int credits;
-};
-
-// Function to map marks to Grade Points and Letter Grades
-void getGradeData(double marks, string &letterGrade, double &gradePoints) {
-    if (marks >= 90.0) { letterGrade = "A+"; gradePoints = 4.0; }
-    else if (marks >= 86.0) { letterGrade = "A";  gradePoints = 4.0; }
-    else if (marks >= 82.0) { letterGrade = "A-"; gradePoints = 3.7; }
-    else if (marks >= 78.0) { letterGrade = "B+"; gradePoints = 3.3; }
-    else if (marks >= 74.0) { letterGrade = "B";  gradePoints = 3.0; }
-    else if (marks >= 70.0) { letterGrade = "B-"; gradePoints = 2.7; }
-    else if (marks >= 66.0) { letterGrade = "C+"; gradePoints = 2.3; }
-    else if (marks >= 62.0) { letterGrade = "C";  gradePoints = 2.0; }
-    else if (marks >= 58.0) { letterGrade = "C-"; gradePoints = 1.7; }
-    else if (marks >= 54.0) { letterGrade = "D+"; gradePoints = 1.3; }
-    else if (marks >= 50.0) { letterGrade = "D";  gradePoints = 1.0; }
-    else { letterGrade = "F"; gradePoints = 0.0; }
-}
-
-int main() {
-    int numCourses;
-    
-    cout << "=================================\n";
-    cout << "   ACADEMIC GPA CALCULATOR       \n";
-    cout << "=================================\n\n";
-    
-    cout << "Enter the number of courses: ";
-    while (!(cin >> numCourses) || numCourses <= 0) {
-        cout << "Invalid input. Please enter a valid number of courses: ";
-        cin.clear();
-        cin.ignore(1000, '\n');
-    }
-
-    vector<Course> courses(numCourses);
-    double totalQualityPoints = 0.0;
-    int totalCredits = 0;
-
-    // Input loop
-    for (int i = 0; i < numCourses; i++) {
-        cin.ignore(); // Clear buffer
-        cout << "\n--- Course " << (i + 1) << " ---\n";
-        cout << "Course Name/Code (Optional): ";
-        getline(cin, courses[i].name);
-        if (courses[i].name.empty()) {
-            courses[i].name = "Course " + to_string(i + 1);
-        }
-
-        // Validate Marks Input
-        cout << "Enter Total Marks (%): ";
-        while (!(cin >> courses[i].marks) || courses[i].marks < 0 || courses[i].marks > 100) {
-            cout << "Invalid marks. Please enter a value between 0 and 100: ";
-            cin.clear();
-            cin.ignore(1000, '\n');
-        }
-
-        // Validate Credits Input
-        cout << "Enter Credit Hours: ";
-        while (!(cin >> courses[i].credits) || courses[i].credits <= 0) {
-            cout << "Invalid credit hours. Please enter a number greater than 0: ";
-            cin.clear();
-            cin.ignore(1000, '\n');
-        }
-    }
-
-    // Output Report Generation
-    cout << "\n\n==================================================================\n";
-    cout << left << setw(20) << "Course" 
-         << setw(12) << "Marks (%)" 
-         << setw(10) << "Grade" 
-         << setw(10) << "Credits" 
-         << "Grade Points\n";
-    cout << "==================================================================\n";
-
-    for (const auto& course : courses) {
-        string letterGrade;
-        double gradePoints;
-        
-        getGradeData(course.marks, letterGrade, gradePoints);
-        
-        double courseQualityPoints = gradePoints * course.credits;
-        totalQualityPoints += courseQualityPoints;
-        totalCredits += course.credits;
-
-        cout << left << setw(20) << course.name 
-             << setw(12) << fixed << setprecision(1) << course.marks 
-             << setw(10) << letterGrade 
-             << setw(10) << course.credits 
-             << fixed << setprecision(2) << gradePoints << "\n";
-    }
-
-    cout << "==================================================================\n";
-    
-    if (totalCredits > 0) {
-        double finalGPA = totalQualityPoints / totalCredits;
-        cout << "Total Credit Hours Registered: " << totalCredits << "\n";
-        cout << "Your Semester GPA            : " << fixed << setprecision(2) << finalGPA << " / 4.00\n";
-    } else {
-        cout << "No credit hours recorded. GPA cannot be calculated.\n";
-    }
-    cout << "==================================================================\n";
-
-    return 0;
-}

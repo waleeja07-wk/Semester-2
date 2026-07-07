@@ -1,4 +1,6 @@
+/*LAB 5 TASKS*/
 /*QUESTION 1*/
+
 #include <iostream>
 using namespace std;
 struct student{
@@ -60,6 +62,7 @@ int main(){
 
 
 /*QUESTION 2*/
+
 // #include <iostream>
 // #include <string>
 // using namespace std;

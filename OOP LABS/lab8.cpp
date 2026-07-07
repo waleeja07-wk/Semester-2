@@ -1,4 +1,6 @@
+/*LAB 8 TASKS*/
 /*QUESTION 1*/
+
 // #include <iostream>
 // using namespace std;
 // class BankAccount{
@@ -34,6 +36,7 @@
 // }
 
 /*QUESTION 2*/
+
 // #include <iostream>
 // using namespace std;
 // class libraryBook{
@@ -73,6 +76,8 @@
 
 // }
 
+/*QUESTION 3*/
+
 #include <iostream>
 using namespace std;
 class Employee{
@@ -106,8 +111,6 @@ int main(){
     emp1.display_empCount();
     emp2.display_empCount();
     // emp11.display_empCount();
-
-    
 
 }
 

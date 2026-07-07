@@ -1,3 +1,6 @@
+/*LAB 4 TASKS*/
+/* QUESTION 1 */
+
 #include <iostream>
 #include <string>
 using namespace std;

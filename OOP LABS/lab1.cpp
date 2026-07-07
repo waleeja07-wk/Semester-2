@@ -1,3 +1,5 @@
+/* LAB LEARNING */
+
 // #include <iostream>
 // using namespace std;
 
@@ -64,7 +66,7 @@
 //   return 0;
 // }
 
-/*LABTASK*/
+/*LAB 1 TASK*/
     /*QUESTION 1*/
 #include <iostream>
 using namespace std;

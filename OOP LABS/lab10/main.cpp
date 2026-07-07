@@ -1,3 +1,5 @@
+/*LAB LEARNING*/
+
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -42,7 +44,7 @@ using namespace std;
 //  return 0;
 // }
 
-
+/*LAB 10 TASKS*/
 //QUESTION 1
 class Distance{
     private:
