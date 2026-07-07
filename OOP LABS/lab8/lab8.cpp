@@ -1,4 +1,6 @@
+/*LAB 8 TASKS*/
 /*QUESTION 1*/
+
 // #include <iostream>
 // using namespace std;
 // class BankAccount{
@@ -72,6 +74,8 @@ int main(){
      return 0;
 
 }
+
+/*QUESTION 3*/
 
 // #include <iostream>
 // #include "class_header.h"

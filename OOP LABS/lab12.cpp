@@ -1,3 +1,6 @@
+/*LAB 12 TASKS*/
+/* QUESTION 1*/
+
 // #include <iostream>
 // using namespace std;
 // // abstract class bcz of pure virtual fxn
@@ -29,6 +32,7 @@
   
 // }
 
+/* QUESTION 2*/
 
 // #include<iostream>
 // using namespace std;
@@ -88,8 +92,6 @@
 // };  // Derived class completed
 
 
-
-
 // int main()
 // {
 //     // I want to call from top
@@ -140,7 +142,7 @@
 
 
 
-
+/* QUESTION 3*/
 // #include <iostream>
 // using namespace std;
 
@@ -233,6 +235,8 @@
 //     return 0;
 // }
 
+
+/* QUESTION 4*/
 // // #include <iostream>
 // // using namespace std;
 

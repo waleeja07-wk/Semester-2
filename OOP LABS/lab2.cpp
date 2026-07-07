@@ -1,3 +1,5 @@
+/* LAB LEARNING */
+
 // #include <iostream>
 // using namespace std;
 // void func(int *a,int *b,int **result){
@@ -24,8 +26,6 @@
 // }
 
 
-
-
 // #include <iostream>
 // using namespace std;
 // int* func(int length){
@@ -49,38 +49,38 @@
 //     received_array=NULL;
 // }
 
-/*LABTASK 2*/
+/*LAB 2 TASK*/
 /*QUESTION 1*/
-// #include <iostream>
-// using namespace std;
-// void high_score(int *score1, int *score2, int **ptr){ 
-//     if(*score1>*score2){
-//           **ptr=*score1;
-//     }
-//     else{
-//         **ptr=*score2;
-//     }
-// }
-// int main(){
-//     int std1_marks;
-//     int std2_marks;
-//     cout<<"MARKS OF STUDENT 1 ";
-//     cin>>std1_marks;
-//     cout<<"MARKS OF STUDENT 2 ";
-//     cin>>std2_marks;
-//     if(std1_marks==std2_marks){
-//        cout<<"BOTH STUDENTS HAVE SAME MARKS";
-//     }
-//    else{
-//     int highest=0;
-//     int *ptr= &highest;
-//     high_score(&std1_marks,&std2_marks,&ptr);
-//     cout<<"SELECTED STUEDENT MARKS = "<<highest;
-//    }
-//     return 0;
-// }
+#include <iostream>
+using namespace std;
+void high_score(int *score1, int *score2, int **ptr){ 
+    if(*score1>*score2){
+          **ptr=*score1;
+    }
+    else{
+        **ptr=*score2;
+    }
+}
+int main(){
+    int std1_marks;
+    int std2_marks;
+    cout<<"MARKS OF STUDENT 1 ";
+    cin>>std1_marks;
+    cout<<"MARKS OF STUDENT 2 ";
+    cin>>std2_marks;
+    if(std1_marks==std2_marks){
+       cout<<"BOTH STUDENTS HAVE SAME MARKS";
+    }
+   else{
+    int highest=0;
+    int *ptr= &highest;
+    high_score(&std1_marks,&std2_marks,&ptr);
+    cout<<"SELECTED STUEDENT MARKS = "<<highest;
+   }
+    return 0;
+}
 
-
+/*QUESTION 2*/
 // #include <iostream>
 // using namespace std;
 // float* calculate_training_score(int length){
